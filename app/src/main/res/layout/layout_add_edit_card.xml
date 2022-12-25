@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    tools:context=".CollectionActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/edit_card"
+        android:backgroundTint="@color/cartes"
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        android:layout_margin="50dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/edit_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/que"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginHorizontal="10dp"
+                android:fontFamily="@font/helveticahowdisplay"
+                android:hint="Entrez votre question"
+                android:textColor="@color/texts"
+                android:textColorHint="@color/buttons"
+                android:backgroundTint="@color/buttons"
+                android:scrollbars = "vertical"
+                android:textSize="23sp"
+                android:maxHeight="175dp"
+                android:verticalScrollbarPosition="defaultPosition">
+
+            </EditText>
+
+            <View
+                android:id="@+id/diviseur"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:background="?android:attr/listDivider"
+                android:backgroundTint="#690537" />
+
+            <TextView
+                android:id="@+id/res"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/diviseur"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/helveticahowdisplay"
+                android:text="Reponse"
+                android:textColor="@color/texts"
+                android:textSize="25sp">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/edit_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/res"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/helveticahowdisplay"
+                android:hint="Entrez votre reponse"
+                android:maxHeight="175dp"
+                android:textColor="@color/texts"
+                android:textColorHint="@color/buttons"
+                android:backgroundTint="@color/buttons"
+                android:scrollbars = "vertical"
+                android:textSize="23sp"
+                android:verticalScrollbarPosition="defaultPosition">
+
+            </EditText>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button_image_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:clickable="true"
+                app:borderWidth="0dp"
+                android:backgroundTint="@color/buttons"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button_image_reponse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/buttons"
+                android:clickable="true"
+                app:borderWidth="0dp"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+            <TextView
+                android:id="@+id/que"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/texts"
+                android:text="Question"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textSize="25sp"
+                android:fontFamily="@font/helveticahowdisplay">
+            </TextView>
+
+            <ImageView
+                android:id="@+id/image_view_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/diviseur"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/que"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/image_view_reponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/res"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

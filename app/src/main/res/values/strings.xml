@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FlashApp</string>
+
+    <string name="add_dialog_confirm">Valider</string>
+    <string name="add_dialog_cancel">Annuler</string>
+
+    <string name="request_success"> connection success !</string>
+    <string name="request_fail"> connection failed :(</string>
+
+</resources>
