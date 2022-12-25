@@ -28,7 +28,7 @@ When you run out of cards you will see your result.
 
 ## How to create APK locally
 If you want to build the apk locally, you need to add a file called "local.properties" in the top level folder with the string inside: "sdk.dir = /home/USER/Android/Sdk".
-Warning: "USER" must be replaced with the name of your Linux account.
+*Warning: "USER" must be replaced with the name of your Linux account.*
 
 For Windows and Mac I leave you the link to solve the problem:
 https://stackoverflow.com/questions/27620262/sdk-location-not-found-define-location-with-sdk-dir-in-the-local-properties-fil
