@@ -1,4 +1,4 @@
-package com.example.flashapp
+package com.ctrlvnt.flashapp
 
 import android.net.Uri
 import android.os.Bundle

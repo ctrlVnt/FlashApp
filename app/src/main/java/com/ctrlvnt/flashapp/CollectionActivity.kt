@@ -1,13 +1,11 @@
-package com.example.flashapp
+package com.ctrlvnt.flashapp
 
 import adapter.CartesAdapter
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.View.INVISIBLE
 import android.widget.*
 import androidx.activity.result.ActivityResultLauncher

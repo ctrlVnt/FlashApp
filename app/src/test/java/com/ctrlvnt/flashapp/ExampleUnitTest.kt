@@ -1,4 +1,4 @@
-package com.example.flashapp
+package com.ctrlvnt.flashapp
 
 import org.junit.Test
 

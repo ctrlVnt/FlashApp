@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.flashapp'
+    namespace 'com.ctrlvnt.flashapp'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.flashapp"
+        applicationId "com.ctrlvnt.flashapp"
         minSdk 21
         targetSdk 32
         versionCode 1

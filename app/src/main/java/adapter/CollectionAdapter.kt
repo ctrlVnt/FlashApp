@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
-import com.example.flashapp.R
+import com.ctrlvnt.flashapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CollectionAdapter(val c: Context, private val collList:ArrayList<model.Collection>):RecyclerView.Adapter<CollectionAdapter.CollectionViewHolder>() {
