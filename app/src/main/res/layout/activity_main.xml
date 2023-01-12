@@ -8,6 +8,7 @@
     android:background="@color/bg"
     tools:context=".MainActivity">
 
+
     <!-- SCHERMO INTERO -->
     <LinearLayout
         android:id="@+id/general_layout"
