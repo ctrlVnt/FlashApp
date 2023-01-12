@@ -400,6 +400,7 @@ class CollectionActivity : AppCompatActivity() {
         val intent = Intent(this, PlayActivity::class.java)
 
         intent.putExtra("list", list)
+        intent.putExtra("numberOfCards", storageCart.size())
         startActivity(intent)
     }
 }

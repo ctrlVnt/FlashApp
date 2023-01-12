@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
@@ -29,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     private var i_local = 1
 
+    private lateinit var firstText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,13 +51,18 @@ class MainActivity : AppCompatActivity() {
 
         recvLocale.adapter = collectionAdapter
 
-
         storageLocal = CollectionJSONFileStorage(this, "collection")
         if(i_local <= storageLocal.size()) {
             loadJson(storageLocal, localList, i_local)
             i_local = storageLocal.size()
         }
 
+        firstText = findViewById<TextView>(R.id.empty_write)
+        if(storageLocal.size() == 0){
+            firstText.visibility = VISIBLE
+        }else{
+            firstText.visibility = INVISIBLE
+        }
 
         addsBtn.setOnClickListener {
             addInfo(i_local)
@@ -81,6 +90,9 @@ class MainActivity : AppCompatActivity() {
                     localList.removeAt(position)
                     i_local -= 1
                     collectionAdapter.notifyDataSetChanged()
+                    if(storageLocal.size() == 0){
+                        firstText.visibility = VISIBLE
+                    }
                     dialog.dismiss()
                 }
                 supDialog.setNegativeButton("Non"){dialog,_->
@@ -121,6 +133,7 @@ class MainActivity : AppCompatActivity() {
                 )
 
                 collectionAdapter.notifyDataSetChanged()
+                firstText.visibility = INVISIBLE
                 dialog.dismiss()
             }else{
                 if(!dontExist(names))

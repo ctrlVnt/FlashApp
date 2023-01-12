@@ -129,7 +129,8 @@ class PlayActivity: AppCompatActivity() {
             findViewById<LinearLayout>(R.id.linearLayout_play).visibility = INVISIBLE
             val inflate = LayoutInflater.from(this)
             val item = inflate.inflate(R.layout.win_item, null)
-            item.findViewById<TextView>(R.id.win_text).setText("Résultat: $punteggio")
+            val tot = intent.getStringExtra("numberOfCards")!!
+            item.findViewById<TextView>(R.id.win_text).setText("Résultat: $punteggio / $tot")
             val win = AlertDialog.Builder(this)
             win.setView(item)
             win.setCancelable(false)

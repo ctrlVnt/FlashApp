@@ -20,37 +20,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- METÀ SUPERIORE -->
+        <!-- PER TESTO -->
         <LinearLayout
+            android:id="@+id/mescollection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_bg2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/layout_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/helveticanowdisplaymedium"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:text="Mes collections"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- METÀ SUPERIORE -->
+        <RelativeLayout
             android:id="@+id/superior_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
             android:orientation="vertical">
 
-            <!-- PER TESTO -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/empty_write"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/layout_bg2"
-                android:layout_marginBottom="5dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/layout_bg">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/helveticanowdisplay"
-                        android:padding="10dp"
-                        android:textColor="@color/white"
-                        android:text="Mes collections"
-                        android:textSize="30sp" />
-
-                </LinearLayout>
-            </LinearLayout>
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/helveticahowdisplay"
+                android:textColor="@color/texts"
+                android:text="Ajouter votre première collection"
+                android:textSize="25sp">
+            </TextView>
 
             <!-- LISTA MIEI MAZZI -->
             <androidx.recyclerview.widget.RecyclerView
@@ -60,7 +72,7 @@
                 android:scrollbars="vertical"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <!--PART PLAY-->
         <LinearLayout
