@@ -40,6 +40,6 @@
         nnb: The name and tag of the collection cannot be edited.\n\n
         <b>ABOUT</b>\n
         <i><a href = "https://riccardoventurini.dev/privacy/flashapp/privacy">I don\'t collect any kind of data, the application is completely offline.</a></i>\n
-        For any information or advice you can find me on my personal website: <a href = "riccardoventurini.dev">riccardoventurini.dev</a></string>
+        For any information or advice you can find me on my personal website: <a href = "https://riccardoventurini.dev">riccardoventurini.dev</a></string>
     <string name="i_understand">I read</string>
 </resources>

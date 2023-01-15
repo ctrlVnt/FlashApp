@@ -57,7 +57,7 @@
     nnb : Le nom et le tag de la collection ne sont pas modifiables.\n\n
     <b>ABOUT</b>\n
     <i><a href = "https://riccardoventurini.dev/privacy/flashapp/privacy">Je ne collecte aucun type de données, l\'application est complètement hors ligne.</a></i>\n
-    Pour toute information ou conseil vous pouvez me retrouver sur mon site personnel : <a href = "riccardoventurini.dev">riccardoventurini.dev</a></string>
+    Pour toute information ou conseil vous pouvez me retrouver sur mon site personnel : <a href = "https://riccardoventurini.dev">riccardoventurini.dev</a></string>
     <string name="i_understand">Je lis</string>
 
 </resources>
