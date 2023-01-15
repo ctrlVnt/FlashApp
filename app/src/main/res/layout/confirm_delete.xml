@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helveticahowdisplay"
                 android:gravity="center"
-                android:hint="Etes-vous sûr que vous voulez supprimer?"
+                android:text="@string/delete"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

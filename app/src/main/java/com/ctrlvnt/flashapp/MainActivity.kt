@@ -16,6 +16,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import model.Collection
 import storage.CollectionJSONFileStorage
 import kotlin.collections.ArrayList
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var firstText: TextView
 
+    private lateinit var tutorial: FloatingActionButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         localList = ArrayList()
 
         addsBtn = findViewById(R.id.add_button)
+        tutorial = findViewById(R.id.tutorial)
         recvLocale = findViewById(R.id.collection_list)
 
         collectionAdapter = CollectionAdapter(this,localList)
@@ -68,6 +71,10 @@ class MainActivity : AppCompatActivity() {
             addInfo(i_local)
         }
 
+        tutorial.setOnClickListener{
+            showTutorial()
+        }
+
 
         collectionAdapter.setonItemClickListener(object : CollectionAdapter.onItemClickListener{
             override fun onItemClick(nameItem: String, tagItem: String) {
@@ -80,7 +87,7 @@ class MainActivity : AppCompatActivity() {
                 val it = sup.inflate(R.layout.confirm_delete,null)
                 val supDialog = AlertDialog.Builder(this@MainActivity)
                 supDialog.setView(it)
-                supDialog.setPositiveButton("Oui"){ dialog, _ ->
+                supDialog.setPositiveButton(getString(R.string.yes)){ dialog, _ ->
                     if(storageLocal.size() > 1) {
                         for (k in position + 1 until storageLocal.size()) {
                             storageLocal.update(k, storageLocal.find(k + 1)!!)
@@ -95,7 +102,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     dialog.dismiss()
                 }
-                supDialog.setNegativeButton("Non"){dialog,_->
+                supDialog.setNegativeButton(getString(R.string.not)){dialog,_->
                     dialog.dismiss()
                 }
                 supDialog.create()
@@ -137,9 +144,9 @@ class MainActivity : AppCompatActivity() {
                 dialog.dismiss()
             }else{
                 if(!dontExist(names))
-                    Toast.makeText(this,"Échec: cette collection existe déjà", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,getString(R.string.error_already_exist), Toast.LENGTH_SHORT).show()
                 else
-                    Toast.makeText(this,"Échec: le contenu ne peut pas être vide", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,getString(R.string.error_not_empty), Toast.LENGTH_SHORT).show()
             }
         }
         addDialog.setNegativeButton("Cancel"){
@@ -175,6 +182,11 @@ class MainActivity : AppCompatActivity() {
                 )
             )
         }
+    }
+
+    private fun showTutorial(){
+        val intent = Intent(this, Tutorial::class.java)
+        startActivity(intent)
     }
 
     fun startCollectionActivity (view: View, name : String, tag : String) {

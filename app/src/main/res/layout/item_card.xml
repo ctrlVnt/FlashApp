@@ -32,7 +32,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/texts"
-                    android:text="Question"
+                    android:text="@string/question"
                     android:fontFamily="@font/helveticahowdisplay">
                 </TextView>
 
@@ -79,7 +79,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/helveticahowdisplay"
-                    android:text="Reponse"
+                    android:text="@string/answer"
                     android:textColor="@color/texts">
                 </TextView>
 

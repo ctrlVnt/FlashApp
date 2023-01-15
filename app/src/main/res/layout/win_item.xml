@@ -22,7 +22,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/helveticahowdisplay"
-            android:text="Risultato: "
             android:textSize="30dp" />
 
     </androidx.cardview.widget.CardView>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_dialog_confirm">Confirm</string>
+    <string name="add_dialog_cancel">Cancel</string>
+    <string name="my_decks">My decks</string>
+    <string name="add_first_deck">Add your first deck</string>
+    <string name="add_deck">Add deck</string>
+    <string name="new_deck">New deck</string>
+    <string name="deck_name">Deck name</string>
+    <string name="deck_tag">Tag or short description</string>
+    <string name="delete">Are you sure you want to delete?</string>
+    <string name="question">Question</string>
+    <string name="answer">Answer</string>
+    <string name="insert_question">Insert your question</string>
+    <string name="insert_answer">Insert your answer</string>
+    <string name="card_number">Number of cards:</string>
+    <string name="play">Play</string>
+    <string name="rotate">rotate</string>
+    <string name="play_error">Before you can play, add some cards</string>
+    <string name="win">result:</string>
+    <string name="error_already_exist">Error: this deck already exists</string>
+    <string name="error_not_empty">Error: content cannot be empty</string>
+    <string name="error_img_upload">Error: error loading image, please try again</string>
+    <string name="error_img_notext">Error: you cannot insert blank cards, fill in all the spaces</string>
+    <string name="yes">Yes</string>
+    <string name="not">No</string>
+    <string name="tutorial">Welcome!\n\n
+        The goal of the application is to create bunches of <a href = "https://en.wikipedia.org/wiki/Flashcard">flashcards</a> that can help you memorize what you need.\n\n
+        How does it work?\n\n
+        First thing to do, create a deck:\n
+        \u2022 press the button: \"add deck\"\n
+        \u2022 insert the name of the deck and, if you want, also a tag or a short description\n
+        \u2022 press \"ok\"\n\n
+        Second, add some cards:\n
+        \u2022 at the bottom right, press the button with a \"+\"\n
+        \u2022 fill in the fields* -press \"ok\"\n\n
+        Third thing, play: pressing \"play\" you can start a game. A question will appear, when you think you know the answer click on \"rotate\", if you have done correctly press the green button, otherwise the red one.\n
+        At the end of the cards you will be able to see your result.\n\n
+        *nb: Empty cards cannot be added and there may be a problem with the selection of images, repeat the procedure in case of error. To change the card just click on it.\n\n
+        nnb: The name and tag of the collection cannot be edited.\n\n
+        <b>ABOUT</b>\n
+        <i><a href = "https://riccardoventurini.dev/privacy/flashapp/privacy">I don\'t collect any kind of data, the application is completely offline.</a></i>\n
+        For any information or advice you can find me on my personal website: <a href = "riccardoventurini.dev">riccardoventurini.dev</a></string>
+    <string name="i_understand">I read</string>
+</resources>

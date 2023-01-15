@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helveticahowdisplay"
                 android:gravity="center"
-                android:hint="Avant de pouvoir jouer, ajoutez quelques cartes"
+                android:text="@string/play_error"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

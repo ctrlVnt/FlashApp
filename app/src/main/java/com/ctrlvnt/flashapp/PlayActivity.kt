@@ -34,7 +34,8 @@ class PlayActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_play)
 
-        var nameList = intent.getStringExtra("list")!!
+        val nameList = intent.getStringExtra("list")!!
+        val tot = intent.getStringExtra("numberOfCards")!!
 
         findViewById<TextView>(R.id.collection_text).setText(nameList)
 
@@ -47,11 +48,11 @@ class PlayActivity: AppCompatActivity() {
         rejectButton.visibility = View.INVISIBLE
         confrimButton.visibility = View.INVISIBLE
 
-        start()
+        start(tot)
 
     }
 
-    private fun start() {
+    private fun start(tot: String) {
 
         var scale = applicationContext.resources.displayMetrics.density
         val front = findViewById<CardView>(R.id.card_item_play) as CardView
@@ -109,7 +110,7 @@ class PlayActivity: AppCompatActivity() {
                     }
                     findViewById<ImageView>(R.id.question_img_back).setImageURI(Uri.EMPTY)
                     findViewById<TextView>(R.id.card_phrase_back).setText("")
-                    next()
+                    next(tot)
                 }
                 rejectButton.setOnClickListener {
                     if(!isFront)
@@ -122,15 +123,14 @@ class PlayActivity: AppCompatActivity() {
                     }
                     findViewById<ImageView>(R.id.question_img_back).setImageURI(Uri.EMPTY)
                     findViewById<TextView>(R.id.card_phrase_back).setText("")
-                    next()
+                    next(tot)
                 }
             }
         }else{
             findViewById<LinearLayout>(R.id.linearLayout_play).visibility = INVISIBLE
             val inflate = LayoutInflater.from(this)
             val item = inflate.inflate(R.layout.win_item, null)
-            val tot = intent.getStringExtra("numberOfCards")!!
-            item.findViewById<TextView>(R.id.win_text).setText("Résultat: $punteggio / $tot")
+            item.findViewById<TextView>(R.id.win_text).setText( getString(R.string.win) + " $punteggio / $tot")
             val win = AlertDialog.Builder(this)
             win.setView(item)
             win.setCancelable(false)
@@ -142,12 +142,12 @@ class PlayActivity: AppCompatActivity() {
         }
     }
 
-    private fun next(){
+    private fun next(tot: String){
         rejectButton.visibility = View.INVISIBLE
         confrimButton.visibility = View.INVISIBLE
         roundButton.visibility = View.VISIBLE
         i +=1
-        start()
+        start(tot)
     }
 
 }

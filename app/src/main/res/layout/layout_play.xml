@@ -120,7 +120,8 @@
                         android:gravity="center"
                         android:scrollbars="vertical"
                         android:textColor="@color/texts"
-                        android:textSize="30sp"></TextView>
+                        android:textSize="30sp">
+                    </TextView>
 
                     <ImageView
                         android:id="@+id/question_img"
@@ -177,7 +178,7 @@
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/title"
-                android:text="tourner" />
+                android:text="@string/rotate" />
 
             <Space
                 android:layout_width="0dp"

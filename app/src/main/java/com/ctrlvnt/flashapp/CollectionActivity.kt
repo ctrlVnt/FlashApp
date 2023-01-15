@@ -87,7 +87,7 @@ class CollectionActivity : AppCompatActivity() {
             loadJson(storageCart, cartesList, i_local)
             i_local = storageCart.size()
         }
-        findViewById<TextView>(R.id.nCartes).setText("NOMBRE DE CARTES: " + storageCart.size().toString())
+        findViewById<TextView>(R.id.nCartes).setText(getString(R.string.card_number) + " " + storageCart.size().toString())
 
         addsBtn.setOnClickListener {
             addCard(storageCart.size())
@@ -119,16 +119,16 @@ class CollectionActivity : AppCompatActivity() {
                 val it = sup.inflate(R.layout.confirm_delete,null)
                 val supDialog = AlertDialog.Builder(this@CollectionActivity)
                 supDialog.setView(it)
-                supDialog.setPositiveButton("Oui") { dialog, _ ->
+                supDialog.setPositiveButton(getString(R.string.yes)) { dialog, _ ->
                     for (k in position + 1 until storageCart.size()) {
                         storageCart.update(k, storageCart.find(k + 1)!!)
                     }
-                    findViewById<TextView>(R.id.nCartes).setText("NOMBRE DE CARTES: " + (storageCart.size() - 1).toString())
+                    findViewById<TextView>(R.id.nCartes).setText(getString(R.string.card_number) + " " + storageCart.size().toString())
                     storageCart.delete(storageCart.size())
                     cartesList.removeAt(position)
                     cartesAdapter.notifyDataSetChanged()
                 }
-                supDialog.setNegativeButton("Non"){dialog,_->
+                supDialog.setNegativeButton(getString(R.string.not)){dialog,_->
                     dialog.dismiss()
                 }
                 supDialog.create()
@@ -168,11 +168,11 @@ class CollectionActivity : AppCompatActivity() {
                     dialog.dismiss()
                 }else{
                     if(uriq.toString() == Uri.EMPTY.toString() && cardQuestion.visibility == INVISIBLE)
-                        Toast.makeText(this,"Échec: erreur lors du chargement de l'image, veuillez réessayer", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,getString(R.string.error_img_upload), Toast.LENGTH_SHORT).show()
                     else if (urir.toString() == Uri.EMPTY.toString() && cardQuestion.visibility == INVISIBLE)
-                        Toast.makeText(this,"Échec: erreur lors du chargement de l'image, veuillez réessayer", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,getString(R.string.error_img_upload), Toast.LENGTH_SHORT).show()
                     else
-                        Toast.makeText(this,"Échec: vous ne pouvez pas insérer de cartes vierges, remplissez tous les espaces", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,getString(R.string.error_img_notext), Toast.LENGTH_SHORT).show()
                 }
             }
             .setNegativeButton("Cancel") { dialog, _ ->
@@ -207,7 +207,7 @@ class CollectionActivity : AppCompatActivity() {
         addDialog.setOnDismissListener {
             uriq = Uri.EMPTY
             urir = Uri.EMPTY
-            findViewById<TextView>(R.id.nCartes).setText("NOMBRE DE CARTES: " + storageCart.size().toString())
+            findViewById<TextView>(R.id.nCartes).setText(getString(R.string.card_number) + " " + storageCart.size().toString())
         }
     }
 
@@ -400,7 +400,7 @@ class CollectionActivity : AppCompatActivity() {
         val intent = Intent(this, PlayActivity::class.java)
 
         intent.putExtra("list", list)
-        intent.putExtra("numberOfCards", storageCart.size())
+        intent.putExtra("numberOfCards", storageCart.size().toString())
         startActivity(intent)
     }
 }

@@ -51,7 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/helveticanowdisplayitalic"
-                    android:text="Tag: "
+                    android:text="@string/tag"
                     android:textColor="@color/white"
                     android:textSize="15sp" />
 
@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/helveticanowdisplayitalic"
                     android:textSize="15dp"
-                    android:text="Nombre de cartes: "
+                    android:text="@string/card_number"
                     android:textColor="@color/white" />
 
             </LinearLayout>
@@ -113,7 +113,7 @@
                     android:layout_weight="1"
                     android:elevation="50dp"
                     android:fontFamily="@font/helveticahowdisplay"
-                    android:text="Jouer"
+                    android:text="@string/play"
                     android:backgroundTint="@color/title"
                     android:textColor="@color/white"
                     android:gravity="center"

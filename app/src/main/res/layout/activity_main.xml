@@ -8,7 +8,6 @@
     android:background="@color/bg"
     tools:context=".MainActivity">
 
-
     <!-- SCHERMO INTERO -->
     <LinearLayout
         android:id="@+id/general_layout"
@@ -39,7 +38,7 @@
                     android:fontFamily="@font/helveticanowdisplaymedium"
                     android:padding="10dp"
                     android:textColor="@color/white"
-                    android:text="Mes collections"
+                    android:text="@string/my_decks"
                     android:textSize="30sp" />
 
             </LinearLayout>
@@ -61,7 +60,7 @@
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/helveticahowdisplay"
                 android:textColor="@color/texts"
-                android:text="Ajouter votre première collection"
+                android:text="@string/add_first_deck"
                 android:textSize="25sp">
             </TextView>
 
@@ -85,6 +84,17 @@
             android:layout_gravity="bottom"
             >
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/tutorial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/accent"
+                android:clickable="true"
+                app:borderWidth="0dp"
+                app:srcCompat="@drawable/baseline_question_mark_24" />
+
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -92,10 +102,9 @@
             </Space>
 
             <LinearLayout
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button
@@ -107,7 +116,7 @@
                     android:fontFamily="@font/helveticanowdisplaymedium"
                     android:backgroundTint="@color/title"
                     android:textColor="@color/white"
-                    android:text="Add collection"
+                    android:text="@string/add_deck"
                     android:textSize="20sp" />
 
             </LinearLayout>
@@ -115,7 +124,7 @@
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_weight="2">
             </Space>
 
         </LinearLayout>

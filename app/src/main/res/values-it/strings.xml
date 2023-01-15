@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_dialog_confirm">Confermare</string>
+    <string name="add_dialog_cancel">Annullare</string>
+    <string name="my_decks">I miei mazzi</string>
+    <string name="add_first_deck">Aggiungi la tua prima collezione</string>
+    <string name="add_deck">Agg mazzo</string>
+    <string name="new_deck">Nuovo mazzo</string>
+    <string name="deck_name">Nome mazzo</string>
+    <string name="deck_tag">Tag o breve descrizione</string>
+    <string name="delete">Confermi di voler eliminare?</string>
+    <string name="question">Domanda</string>
+    <string name="answer">Risposta</string>
+    <string name="insert_question">Inserisci la tua domanda</string>
+    <string name="insert_answer">Inserisci la tua risposta</string>
+    <string name="card_number">Numero di carte:</string>
+    <string name="play">Giocare</string>
+    <string name="rotate">Ruotare</string>
+    <string name="play_error">Aggiungi almeno una carta per poter giocare</string>
+    <string name="win">Risultato:</string>
+    <string name="error_already_exist">Errore: questo mazzo esiste già</string>
+    <string name="error_not_empty">Errore: il contenuto non può essere vuoto</string>
+    <string name="error_img_upload">Errore: errore durante il caricamento dell\'immagine, riprova</string>
+    <string name="error_img_notext">Errore: impossibile inserire carte vuote, compila tutti gli spazi</string>
+    <string name="yes">Si</string>
+    <string name="not">No</string>
+    <string name="tutorial">Benvenuti!\n\n
+        L\\\'obiettivo dell\\\'applicazione è quella di creare dei mazzi di <a href = "https://en.wikipedia.org/wiki/Flashcard">flashcard</a> che possono aiutarvi a memorizzare quello che vi serve.\n\n
+        Come funziona?\n\n
+        Prima cosa da fare, creare un mazzo:\n
+        \u2022 premere sul bottone: \"aggiungi mazzo\"\n
+        \u2022 inserire il nome del mazzo e, se si vuole, anche un tag o una breve descrizione\n
+        \u2022 premere \"ok\"\n\n
+        Seconda cosa, aggiungere delle carte:\n
+        \u2022 in basso a destra premere il bottone con un \"+\"\n
+        \u2022 riempire i campi* -premere \"ok\"\n\n
+        Terza cosa, giocare: premendo \"gioca\" potrete iniziare una partita. Vi apparirà una domanda, quando pensate di sapere la risposta cliccate su \"ruota\", se avete fatto corretto schiacciate il bottone verde, altrimenti quello rosso.\n
+        Alla fine delle carte potrete vedere il vostro risultato.\n\n
+        *nb: Non si possono aggiungere carte vuote e potrebbe esserci un problema con la selezione delle immagini, ripetere il procedimento in caso di errore. Per modificare la carta basta cliccarci sopra.\n\n
+        nnb: Non è possibile modificare nome e tag della collezione.\n\n
+        <b>ABOUT</b>\n
+        <i><a href = "https://riccardoventurini.dev/privacy/flashapp/privacy">Non colleziono nessun tipo di dato, l\'applicazione è completamente offline.</a></i>\n
+        Per qualsiasi informazione o consiglio puoi trovarmi sul mio sito web personale: <a href = "riccardoventurini.dev">riccardoventurini.dev</a></string>
+    <string name="i_understand">Ho letto</string>
+</resources>
