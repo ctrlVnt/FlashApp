@@ -28,18 +28,19 @@
         L\\\'obiettivo dell\\\'applicazione è quella di creare dei mazzi di <a href = "https://en.wikipedia.org/wiki/Flashcard">flashcard</a> che possono aiutarvi a memorizzare quello che vi serve.\n\n
         Come funziona?\n\n
         Prima cosa da fare, creare un mazzo:\n
-        \u2022 premere sul bottone: \"aggiungi mazzo\"\n
+        \u2022 premere sul bottone: AGG MAZZO\n
         \u2022 inserire il nome del mazzo e, se si vuole, anche un tag o una breve descrizione\n
-        \u2022 premere \"ok\"\n\n
+        \u2022 premere OK\n\n
         Seconda cosa, aggiungere delle carte:\n
         \u2022 in basso a destra premere il bottone con un \"+\"\n
-        \u2022 riempire i campi* -premere \"ok\"\n\n
-        Terza cosa, giocare: premendo \"gioca\" potrete iniziare una partita. Vi apparirà una domanda, quando pensate di sapere la risposta cliccate su \"ruota\", se avete fatto corretto schiacciate il bottone verde, altrimenti quello rosso.\n
+        \u2022 riempire i campi*\n
+        \u2022 premere OK\n\n
+        Terza cosa, giocare: premendo GIOCA potrete iniziare una partita. Vi apparirà una domanda, quando pensate di sapere la risposta cliccate su RUOTA, se avete fatto corretto schiacciate il bottone verde, altrimenti quello rosso.\n
         Alla fine delle carte potrete vedere il vostro risultato.\n\n
         *nb: Non si possono aggiungere carte vuote e potrebbe esserci un problema con la selezione delle immagini, ripetere il procedimento in caso di errore. Per modificare la carta basta cliccarci sopra.\n\n
         nnb: Non è possibile modificare nome e tag della collezione.\n\n
         <b>ABOUT</b>\n
-        <i><a href = "https://riccardoventurini.dev/privacy/flashapp/privacy">Non colleziono nessun tipo di dato, l\'applicazione è completamente offline.</a></i>\n
-        Per qualsiasi informazione o consiglio puoi trovarmi sul mio sito web personale: <a href = "https://riccardoventurini.dev">riccardoventurini.dev</a></string>
+        Per qualsiasi informazione o consiglio puoi trovarmi sul mio sito web personale: <a href = "https://riccardoventurini.dev">riccardoventurini.dev</a>\n\n
+        <i><a href = "https://riccardoventurini.dev/privacy/flashapp/privacy">Non colleziono nessun tipo di dato, l\'applicazione è completamente offline.</a></i></string>
     <string name="i_understand">Ho letto</string>
 </resources>
