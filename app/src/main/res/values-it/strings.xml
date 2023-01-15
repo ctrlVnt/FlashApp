@@ -4,7 +4,7 @@
     <string name="add_dialog_cancel">Annullare</string>
     <string name="my_decks">I miei mazzi</string>
     <string name="add_first_deck">Aggiungi la tua prima collezione</string>
-    <string name="add_deck">Agg mazzo</string>
+    <string name="add_deck">Add mazzo</string>
     <string name="new_deck">Nuovo mazzo</string>
     <string name="deck_name">Nome mazzo</string>
     <string name="deck_tag">Tag o breve descrizione</string>
@@ -25,10 +25,10 @@
     <string name="yes">Si</string>
     <string name="not">No</string>
     <string name="tutorial">Benvenuti!\n\n
-        L\\\'obiettivo dell\\\'applicazione è quella di creare dei mazzi di <a href = "https://en.wikipedia.org/wiki/Flashcard">flashcard</a> che possono aiutarvi a memorizzare quello che vi serve.\n\n
+        L\'obiettivo dell\'applicazione è quella di creare dei mazzi di <a href = "https://en.wikipedia.org/wiki/Flashcard">flashcard</a> che possono aiutarvi a memorizzare quello che vi serve.\n\n
         Come funziona?\n\n
         Prima cosa da fare, creare un mazzo:\n
-        \u2022 premere sul bottone: AGG MAZZO\n
+        \u2022 premere sul bottone: ADD MAZZO\n
         \u2022 inserire il nome del mazzo e, se si vuole, anche un tag o una breve descrizione\n
         \u2022 premere OK\n\n
         Seconda cosa, aggiungere delle carte:\n
