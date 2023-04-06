@@ -7,6 +7,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View.INVISIBLE
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -22,6 +24,7 @@ import storage.CartesJSONFileStorage
 class CollectionActivity : AppCompatActivity() {
 
     private lateinit var addsBtn: FloatingActionButton
+    private lateinit var shuffle: FloatingActionButton
     private lateinit var recv: RecyclerView
     private lateinit var cartesList: ArrayList<Cartes>
     private lateinit var cartesAdapter: CartesAdapter
@@ -41,15 +44,23 @@ class CollectionActivity : AppCompatActivity() {
 
     private lateinit var nameCollection: String
 
+    private lateinit var pulseAnimation: Animation
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_collection)
+
+        pulseAnimation = AnimationUtils.loadAnimation(this, R.anim.pulse_animation)
+
+        var shufflePlay: Boolean
+        shufflePlay = false;
 
         permissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()){ permissions ->
             isReadPermissionGranted = permissions[android.Manifest.permission.READ_EXTERNAL_STORAGE] ?: isReadPermissionGranted
         }
 
         addsBtn = findViewById(R.id.add_button)
+        shuffle = findViewById(R.id.shuffle)
 
         findViewById<TextView>(R.id.collection_name).setText(intent.getStringExtra("collectionName"))
         findViewById<TextView>(R.id.tag).setText(intent.getStringExtra("collectionTag"))
@@ -90,10 +101,12 @@ class CollectionActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.nCartes).setText(getString(R.string.card_number) + " " + storageCart.size().toString())
 
         addsBtn.setOnClickListener {
+            addsBtn.startAnimation(pulseAnimation)
             addCard(storageCart.size())
         }
 
         findViewById<Button>(R.id.play_button).setOnClickListener{
+            findViewById<Button>(R.id.play_button).startAnimation(pulseAnimation)
             if(storageCart.size() == 0){
                 val infltererror = LayoutInflater.from(this)
                 val itemerror = infltererror.inflate(R.layout.play_error, null)
@@ -104,8 +117,24 @@ class CollectionActivity : AppCompatActivity() {
                 }
                 error.show()
             }else {
-                startPlayActivity(nameCollection)
+                startPlayActivity(nameCollection, shufflePlay)
             }
+        }
+
+        shuffle.setOnClickListener{
+            shuffle.startAnimation(pulseAnimation)
+            shufflePlay = !shufflePlay
+
+            /*val default = ContextCompat.getColor(this, R.color.red)
+            val on = ContextCompat.getColor(this, R.color.accent)
+
+            if(shufflePlay){
+                shuffle.setBackgroundColor(on)
+            }else{
+                shuffle.setBackgroundColor(default)
+            }*/
+
+            setButtonBackgroundTint(shuffle, shufflePlay)
         }
 
         cartesAdapter.setonItemClickListener(object : CartesAdapter.onItemClickListener{
@@ -396,9 +425,17 @@ class CollectionActivity : AppCompatActivity() {
         }
     }
 
-    private fun startPlayActivity (list: String) {
-        val intent = Intent(this, PlayActivity::class.java)
+    private fun setButtonBackgroundTint(button: FloatingActionButton, t: Boolean) {
+        if (t) {
+            button.backgroundTintList =  ContextCompat.getColorStateList(button.context, R.color.yellow)
+        } else {
+            button.backgroundTintList =  ContextCompat.getColorStateList(button.context, R.color.accent)
+        }
+    }
 
+    private fun startPlayActivity (list: String, shufflePlay: Boolean) {
+        val intent = Intent(this, PlayActivity::class.java)
+        intent.putExtra("shuffle", shufflePlay)
         intent.putExtra("list", list)
         intent.putExtra("numberOfCards", storageCart.size().toString())
         startActivity(intent)

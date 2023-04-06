@@ -39,25 +39,28 @@
     <string name="error_img_upload">Échec: erreur lors du chargement de l\'image, veuillez réessayer</string>
     <string name="error_img_notext">Échec: vous ne pouvez pas insérer de cartes vierges, remplissez tous les espaces</string>
 
-    <string name="tutorial">Bienvenu!\n\n
+    <string name="tutorial">Bienvenue !\n\n
     Le but de l\'application est de créer des collections de <a href = "https://en.wikipedia.org/wiki/Flashcard">flashcards</a> qui peuvent vous aider à mémoriser ce dont vous avez besoin.\n\n
-    Comment ça marche?\n\n
-    Première chose à faire, créer une collection :\n
-    \u2022 appuyez sur le bouton : ADD COLLECTION\n
-    \u2022 insérez le nom de la collection et, si vous le souhaitez, également une étiquette ou une courte description\n
-    \u2022 appuyer sur OK\n\n
-    Deuxièmement, ajoutez quelques cartes:\n
-    \u2022 en bas à droite, appuyez sur le bouton avec un PLUS\n
-    \u2022 remplir les champs*\n
-    \u2022 appuyer sur OK\n\n
-    Troisième chose, jouez :\n
-    en appuyant sur JOUER, vous pouvez commencer une partie. Une question apparaîtra, quand vous pensez connaître la réponse cliquez sur TOURNER, si vous avez bien fait appuyez sur le bouton vert, sinon le rouge.\n
-    À la fin des cartes, vous pourrez voir votre résultat.\n\n
-    *nb : Les cartes vides ne peuvent pas être ajoutées et il peut y avoir un problème avec la sélection des images, répétez la procédure en cas d\'erreur. Pour changer de carte, il suffit de cliquer dessus.\n\n
-    nnb : Le nom et le tag de la collection ne sont pas modifiables.\n\n
+    <b>Comment ça marche?</b>\n\n
+        <u>ACCUEIL</u>\n\n
+        <b>Add collection</b> est la commande pour créer des collections des cartes.\n\n
+
+        <u>COLLECTION</u>\n\n
+        \u2022 Le bouton en bas à droite permet de créer des cartes\n
+        \u2022 Le bouton en bas à gauche est en mode aléatoire, quand il est jaune il est actif\n
+        \u2022 Lorsque les cartes sont prêtes, vous pouvez jouer avec le bouton "Jouer"\n\n
+
+        <u>LE JEU</u>\n\n
+        Lisez la question, appuyez sur <b>tourner</b> et voyez la réponse.\n
+        \u2022 Vert : bonne réponse\n
+        \u2022 Rouge : Mauvaise réponse\n
+        À la fin, vous verrez le résultat.\n\n
+
+
+        <b>nb :</b> Le nom et le tag de la collection ne sont pas modifiables.\n\n
     <b>ABOUT</b>\n
     Pour toute information ou conseil vous pouvez me retrouver sur mon site personnel : <a href = "https://riccardoventurini.dev">riccardoventurini.dev</a>\n\n
     <i><a href = "https://riccardoventurini.dev/privacy/flashapp/privacy">Je ne collecte aucun type de données, l\'application est complètement hors ligne.</a></i></string>
-    <string name="i_understand">Je lis</string>
+    <string name="i_understand">D\'accord</string>
 
 </resources>

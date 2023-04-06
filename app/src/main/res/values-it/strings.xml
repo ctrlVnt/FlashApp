@@ -14,8 +14,8 @@
     <string name="insert_question">Inserisci la tua domanda</string>
     <string name="insert_answer">Inserisci la tua risposta</string>
     <string name="card_number">Numero di carte:</string>
-    <string name="play">Giocare</string>
-    <string name="rotate">Ruotare</string>
+    <string name="play">Gioca</string>
+    <string name="rotate">Ruota</string>
     <string name="play_error">Aggiungi almeno una carta per poter giocare</string>
     <string name="win">Risultato:</string>
     <string name="error_already_exist">Errore: questo mazzo esiste già</string>
@@ -26,19 +26,21 @@
     <string name="not">No</string>
     <string name="tutorial">Benvenuti!\n\n
         L\'obiettivo dell\'applicazione è quella di creare dei mazzi di <a href = "https://en.wikipedia.org/wiki/Flashcard">flashcard</a> che possono aiutarvi a memorizzare quello che vi serve.\n\n
-        Come funziona?\n\n
-        Prima cosa da fare, creare un mazzo:\n
-        \u2022 premere sul bottone: ADD MAZZO\n
-        \u2022 inserire il nome del mazzo e, se si vuole, anche un tag o una breve descrizione\n
-        \u2022 premere OK\n\n
-        Seconda cosa, aggiungere delle carte:\n
-        \u2022 in basso a destra premere il bottone con un \"+\"\n
-        \u2022 riempire i campi*\n
-        \u2022 premere OK\n\n
-        Terza cosa, giocare: premendo GIOCA potrete iniziare una partita. Vi apparirà una domanda, quando pensate di sapere la risposta cliccate su RUOTA, se avete fatto corretto schiacciate il bottone verde, altrimenti quello rosso.\n
-        Alla fine delle carte potrete vedere il vostro risultato.\n\n
-        *nb: Non si possono aggiungere carte vuote e potrebbe esserci un problema con la selezione delle immagini, ripetere il procedimento in caso di errore. Per modificare la carta basta cliccarci sopra.\n\n
-        nnb: Non è possibile modificare nome e tag della collezione.\n\n
+        <b>Come funziona?</b>\n\n
+         <u>HOME</u>\n\n
+         <b>Add mazzo</b> è il comando per creare collezioni di carte.\n\n
+
+         <u>MAZZO</u>\n\n
+         \u2022 Il pulsante in basso a destra serve per creare le carte\n
+         \u2022 Il pulsante in basso a sinistra è la modalità casuale, quando è giallo è attivo\n
+         \u2022 Quando le carte sono pronte, puoi iniziare con il pulsante "Gioca"\n\n
+
+        <u>IL GIOCO</u>\n\n
+         Leggi la domanda, premi <b>ruota</b> e guarda la risposta.\n
+         \u2022 Verde: risposta corretta\n
+         \u2022 Rosso: risposta errata\n
+         Alla fine delle carte vedrai il risultato.\n\n
+
         <b>ABOUT</b>\n
         Per qualsiasi informazione o consiglio puoi trovarmi sul mio sito web personale: <a href = "https://riccardoventurini.dev">riccardoventurini.dev</a>\n\n
         <i><a href = "https://riccardoventurini.dev/privacy/flashapp/privacy">Non colleziono nessun tipo di dato, l\'applicazione è completamente offline.</a></i></string>

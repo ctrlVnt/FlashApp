@@ -14,8 +14,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
+import android.util.Log
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.cardview.widget.CardView
 import storage.CartesJSONFileStorage
+import kotlin.math.log
+import kotlin.random.Random
 
 class PlayActivity: AppCompatActivity() {
 
@@ -24,22 +29,41 @@ class PlayActivity: AppCompatActivity() {
     private lateinit var confrimButton: FloatingActionButton
     private lateinit var roundButton: Button
     private var punteggio = 0
-    private var i = 1
+    private var i = 0
+    private var shuffle : Boolean = false
+
+    private lateinit var numeriPossibili : MutableList<Int>
 
     private lateinit var front_animation:AnimatorSet
     private lateinit var back_animation: AnimatorSet
     private var isFront = true
 
+    private lateinit var pulseAnimation: Animation
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout_play)
 
+        pulseAnimation = AnimationUtils.loadAnimation(this, R.anim.pulse_animation)
+
         val nameList = intent.getStringExtra("list")!!
         val tot = intent.getStringExtra("numberOfCards")!!
+        shuffle = intent.getBooleanExtra("shuffle", false)
 
         findViewById<TextView>(R.id.collection_text).setText(nameList)
 
         storage = CartesJSONFileStorage(this, nameList)
+
+        numeriPossibili = mutableListOf<Int>()
+        for( n in 1 until  storage.size() + 2){
+            numeriPossibili.add(n)
+        }
+
+        if(!shuffle) {
+            i = numeriPossibili.removeAt(0)
+        }else{
+            val remove = Random.nextInt(numeriPossibili.size - 1)
+            i = numeriPossibili.removeAt(remove)
+        }
 
         rejectButton = findViewById(R.id.reject)
         confrimButton = findViewById(R.id.confirm)
@@ -49,7 +73,6 @@ class PlayActivity: AppCompatActivity() {
         confrimButton.visibility = View.INVISIBLE
 
         start(tot)
-
     }
 
     private fun start(tot: String) {
@@ -64,7 +87,7 @@ class PlayActivity: AppCompatActivity() {
         front_animation = AnimatorInflater.loadAnimator(applicationContext, R.animator.front_animator) as AnimatorSet
         back_animation = AnimatorInflater.loadAnimator(applicationContext, R.animator.back_animator) as AnimatorSet
 
-        if(i < storage.size() + 1) {
+        if(numeriPossibili.isNotEmpty()) {
             rejectButton.visibility = View.INVISIBLE
             confrimButton.visibility = View.INVISIBLE
             if (storage.find(i)!!.imageq == Uri.EMPTY.toString()) {
@@ -75,6 +98,7 @@ class PlayActivity: AppCompatActivity() {
             }
 
             roundButton.setOnClickListener {
+                roundButton.startAnimation(pulseAnimation)
                 roundButton.visibility = View.INVISIBLE
                 rejectButton.visibility = View.VISIBLE
                 confrimButton.visibility = View.VISIBLE
@@ -99,6 +123,7 @@ class PlayActivity: AppCompatActivity() {
                 findViewById<TextView>(R.id.card_phrase).setText("")
 
                 confrimButton.setOnClickListener {
+                    confrimButton.startAnimation(pulseAnimation)
                     punteggio += 1
                     if(!isFront)
                     {
@@ -113,6 +138,7 @@ class PlayActivity: AppCompatActivity() {
                     next(tot)
                 }
                 rejectButton.setOnClickListener {
+                    rejectButton.startAnimation(pulseAnimation)
                     if(!isFront)
                     {
                         front_animation.setTarget(back)
@@ -146,7 +172,17 @@ class PlayActivity: AppCompatActivity() {
         rejectButton.visibility = View.INVISIBLE
         confrimButton.visibility = View.INVISIBLE
         roundButton.visibility = View.VISIBLE
-        i +=1
+        if (shuffle){
+            val remove : Int
+            if(numeriPossibili.size > 1){
+                remove = Random.nextInt(numeriPossibili.size - 1)
+            }else{
+                remove = 0
+            }
+            i = numeriPossibili.removeAt(remove)
+        }else{
+            i = numeriPossibili.removeAt(0)
+        }
         start(tot)
     }
 

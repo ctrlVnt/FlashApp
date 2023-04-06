@@ -15,7 +15,7 @@
     <string name="insert_answer">Insert your answer</string>
     <string name="card_number">Number of cards:</string>
     <string name="play">Play</string>
-    <string name="rotate">rotate</string>
+    <string name="rotate">turn</string>
     <string name="play_error">Before you can play, add some cards</string>
     <string name="win">result:</string>
     <string name="error_already_exist">Error: this deck already exists</string>
@@ -25,20 +25,22 @@
     <string name="yes">Yes</string>
     <string name="not">No</string>
     <string name="tutorial">Welcome!\n\n
-        The goal of the application is to create bunches of <a href = "https://en.wikipedia.org/wiki/Flashcard">flashcards</a> that can help you memorize what you need.\n\n
-        How does it work?\n\n
-        First thing to do, create a deck:\n
-        \u2022 press the button: ADD DECK\n
-        \u2022 insert the name of the deck and, if you want, also a tag or a short description\n
-        \u2022 press OK\n\n
-        Second, add some cards:\n
-        \u2022 at the bottom right, press the button with a \"+\"\n
-        \u2022 fill in the fields*\n
-        \u2022 press OK\n\n
-        Third thing, play: pressing PLAY you can start a game. A question will appear, when you think you know the answer click on ROTATE, if you have done correctly press the green button, otherwise the red one.\n
-        At the end of the cards you will be able to see your result.\n\n
-        *nb: Empty cards cannot be added and there may be a problem with the selection of images, repeat the procedure in case of error. To change the card just click on it.\n\n
-        nnb: The name and tag of the collection cannot be edited.\n\n
+        The goal of the application is to create bunches of <a href = "https://en.wikipedia.org/wiki/Flashcard">flashcards</a> that can help you to memorize what you need.\n\n
+        <b>How does it work?</b>\n\n
+         <u>HOME</u>\n\n
+         <b>Add deck</b> is the command to create a new deck of cards.\n\n
+
+         <u>DECK</u>\n\n
+         \u2022 The button at the bottom right is used to create cards\n
+         \u2022 The button at the bottom left is in random mode, when it is yellow it is active\n
+         \u2022 When the cards are ready, you can play with the "Play" button\n\n
+
+         <u>THE GAME</u>\n\n
+         Read the question, press <b>turn</b> and see the answer.\n
+         \u2022 Green: correct answer\n
+         \u2022 Red: Wrong answer\n
+         At the end you will see the result.\n\n
+
         <b>ABOUT</b>\n
         For any information or advice you can find me on my personal website: <a href = "https://riccardoventurini.dev">riccardoventurini.dev</a>\n\n
         <i><a href = "https://riccardoventurini.dev/privacy/flashapp/privacy">I don\'t collect any kind of data, the application is completely offline.</a></i></string>

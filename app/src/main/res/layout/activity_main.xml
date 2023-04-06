@@ -93,6 +93,7 @@
                 android:backgroundTint="@color/accent"
                 android:clickable="true"
                 app:borderWidth="0dp"
+                app:elevation="0dp"
                 app:srcCompat="@drawable/baseline_question_mark_24" />
 
             <Space
