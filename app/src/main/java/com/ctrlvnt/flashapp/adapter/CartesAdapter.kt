@@ -1,4 +1,4 @@
-package adapter
+package com.ctrlvnt.flashapp.adapter
 
 import android.content.Context
 import android.net.Uri
@@ -10,11 +10,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ctrlvnt.flashapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import model.Cartes
+import com.ctrlvnt.flashapp.model.Cartes
 
 class CartesAdapter(val c: Context, val collList:ArrayList<Cartes>):RecyclerView.Adapter<CartesAdapter.CartesViewHolder>() {
 
-    private lateinit var mlistener : CartesAdapter.onItemClickListener
+    private lateinit var mlistener : onItemClickListener
 
     interface onItemClickListener{
         fun onItemClick(questionItem: String, reponseItem: String, position: Int)
@@ -25,7 +25,7 @@ class CartesAdapter(val c: Context, val collList:ArrayList<Cartes>):RecyclerView
         mlistener = listener
     }
 
-    inner class CartesViewHolder(val v:View, listener : CartesAdapter.onItemClickListener):RecyclerView.ViewHolder(v) {
+    inner class CartesViewHolder(val v:View, listener : onItemClickListener):RecyclerView.ViewHolder(v) {
 
         var question: TextView
         var reponse: TextView

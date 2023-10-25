@@ -7,17 +7,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/collection_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/cartes"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/cartes"
             android:orientation="horizontal"
             app:cardCornerRadius="30dp">
 
@@ -30,45 +34,43 @@
                     android:id="@+id/collection_name"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
+                    android:layout_marginStart="18dp"
                     android:layout_weight="1"
-                    android:textSize="25sp"
                     android:fontFamily="@font/helveticanowdisplaymedium"
                     android:padding="5dp"
-                    android:layout_marginStart="18dp"
                     android:text="Nom: "
-                    android:textColor="@color/texts">
-                </TextView>
+                    android:textColor="@color/texts"
+                    android:textSize="25sp"></TextView>
 
                 <TextView
                     android:id="@+id/collection_tag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="7dp"
-                    android:textSize="16sp"
                     android:layout_marginStart="18dp"
                     android:fontFamily="@font/helveticanowdisplaymedium"
+                    android:padding="7dp"
                     android:text="TAG: "
-                    android:textColor="@color/texts">
-                </TextView>
+                    android:textColor="@color/texts"
+                    android:textSize="16sp"></TextView>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
+                android:layout_gravity="end"
                 android:layout_marginEnd="20dp"
-                android:orientation="vertical"
-                android:layout_gravity="end">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/delete_collection"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@color/buttons"
                     android:clickable="true"
                     app:borderWidth="0dp"
-                    android:backgroundTint="@color/buttons"
-                    app:srcCompat="@android:drawable/ic_menu_delete" />
+                    app:srcCompat="@drawable/ic_delete" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

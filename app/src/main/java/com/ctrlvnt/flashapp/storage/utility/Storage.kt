@@ -1,4 +1,4 @@
-package storage.utility
+package com.ctrlvnt.flashapp.storage.utility
 
 abstract class Storage<T> {
     abstract fun insert(obj: T): Int

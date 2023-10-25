@@ -1,9 +1,9 @@
-package storage
+package com.ctrlvnt.flashapp.storage
 
 import android.content.Context
-import model.Collection
+import com.ctrlvnt.flashapp.model.Collection
 import org.json.JSONObject
-import storage.utility.file.JSONFileStorage
+import com.ctrlvnt.flashapp.storage.utility.file.JSONFileStorage
 
 class CollectionJSONFileStorage(context: Context, name: String): JSONFileStorage<Collection>(context, name) {
     override fun create(id: Int, obj: Collection): Collection {

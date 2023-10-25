@@ -1,15 +1,17 @@
-package adapter
+package com.ctrlvnt.flashapp.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.ctrlvnt.flashapp.R
+import com.ctrlvnt.flashapp.model.Collection
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class CollectionAdapter(val c: Context, private val collList:ArrayList<model.Collection>):RecyclerView.Adapter<CollectionAdapter.CollectionViewHolder>() {
+class CollectionAdapter(val c: Context, private val collList:ArrayList<Collection>):RecyclerView.Adapter<CollectionAdapter.CollectionViewHolder>() {
 
     private lateinit var mlistener : onItemClickListener
 

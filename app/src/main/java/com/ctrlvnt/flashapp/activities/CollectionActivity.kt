@@ -1,9 +1,10 @@
-package com.ctrlvnt.flashapp
+package com.ctrlvnt.flashapp.activities
 
-import adapter.CartesAdapter
+import com.ctrlvnt.flashapp.adapter.CartesAdapter
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View.INVISIBLE
@@ -12,14 +13,16 @@ import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ctrlvnt.flashapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import model.Cartes
-import storage.CartesJSONFileStorage
+import com.ctrlvnt.flashapp.model.Cartes
+import com.ctrlvnt.flashapp.storage.CartesJSONFileStorage
 
 class CollectionActivity : AppCompatActivity() {
 
@@ -157,7 +160,7 @@ class CollectionActivity : AppCompatActivity() {
                     cartesList.removeAt(position)
                     cartesAdapter.notifyDataSetChanged()
                 }
-                supDialog.setNegativeButton(getString(R.string.not)){dialog,_->
+                supDialog.setNegativeButton(getString(R.string.not)){ dialog, _->
                     dialog.dismiss()
                 }
                 supDialog.create()
@@ -218,7 +221,7 @@ class CollectionActivity : AppCompatActivity() {
                 cardQuestion.visibility = INVISIBLE
                 galleryActivityLauncherQuestion.launch(intent)
                 item.findViewById<ImageView>(R.id.image_view_question)
-                    .setImageDrawable(getResources().getDrawable(R.drawable.ic_upload))
+                    .setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.ic_upload))
             }
         }
         addDialog.findViewById<FloatingActionButton>(R.id.button_image_reponse)!!.setOnClickListener {
@@ -229,7 +232,9 @@ class CollectionActivity : AppCompatActivity() {
                 cardAnswer.setText("")
                 cardAnswer.visibility = INVISIBLE
                 galleryActivityLauncherReponse.launch(intent)
-                item.findViewById<ImageView>(R.id.image_view_reponse).setImageDrawable(getResources().getDrawable(R.drawable.ic_upload))
+                item.findViewById<ImageView>(R.id.image_view_reponse).setImageDrawable(ContextCompat.getDrawable(
+                    applicationContext, R.drawable.ic_upload
+                ))
             }
         }
 
@@ -408,17 +413,18 @@ class CollectionActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     private fun checkPermission(){
         val isReadPermission = ContextCompat.checkSelfPermission(
             this,
-            android.Manifest.permission.READ_EXTERNAL_STORAGE
+            android.Manifest.permission.READ_MEDIA_IMAGES
         ) == PackageManager.PERMISSION_GRANTED
 
         isReadPermissionGranted = isReadPermission
 
         val permissionRequest = mutableListOf<String>()
         if (!isReadPermissionGranted){
-            permissionRequest.add(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+            permissionRequest.add(android.Manifest.permission.READ_MEDIA_IMAGES)
         }
         if (permissionRequest.isNotEmpty()){
             permissionLauncher.launch(permissionRequest.toTypedArray())
@@ -427,9 +433,13 @@ class CollectionActivity : AppCompatActivity() {
 
     private fun setButtonBackgroundTint(button: FloatingActionButton, t: Boolean) {
         if (t) {
-            button.backgroundTintList =  ContextCompat.getColorStateList(button.context, R.color.yellow)
+            button.backgroundTintList =  ContextCompat.getColorStateList(button.context,
+                R.color.yellow
+            )
         } else {
-            button.backgroundTintList =  ContextCompat.getColorStateList(button.context, R.color.accent)
+            button.backgroundTintList =  ContextCompat.getColorStateList(button.context,
+                R.color.accent
+            )
         }
     }
 

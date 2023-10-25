@@ -1,4 +1,4 @@
-package model
+package com.ctrlvnt.flashapp.model
 
 class Collection(
     val id: Int,

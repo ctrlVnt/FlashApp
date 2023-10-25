@@ -1,4 +1,4 @@
-package storage.utility.file
+package com.ctrlvnt.flashapp.storage.utility.file
 
 import android.content.Context
 import org.json.JSONObject

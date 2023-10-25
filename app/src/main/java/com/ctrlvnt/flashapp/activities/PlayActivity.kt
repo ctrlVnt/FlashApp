@@ -1,4 +1,4 @@
-package com.ctrlvnt.flashapp
+package com.ctrlvnt.flashapp.activities
 
 import android.net.Uri
 import android.os.Bundle
@@ -14,12 +14,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
-import android.util.Log
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.cardview.widget.CardView
-import storage.CartesJSONFileStorage
-import kotlin.math.log
+import com.ctrlvnt.flashapp.R
+import com.ctrlvnt.flashapp.storage.CartesJSONFileStorage
 import kotlin.random.Random
 
 class PlayActivity: AppCompatActivity() {
@@ -84,7 +83,9 @@ class PlayActivity: AppCompatActivity() {
         front.cameraDistance = 8000 * scale
         back.cameraDistance = 8000 * scale
 
-        front_animation = AnimatorInflater.loadAnimator(applicationContext, R.animator.front_animator) as AnimatorSet
+        front_animation = AnimatorInflater.loadAnimator(applicationContext,
+            R.animator.front_animator
+        ) as AnimatorSet
         back_animation = AnimatorInflater.loadAnimator(applicationContext, R.animator.back_animator) as AnimatorSet
 
         if(numeriPossibili.isNotEmpty()) {
@@ -157,6 +158,11 @@ class PlayActivity: AppCompatActivity() {
             val inflate = LayoutInflater.from(this)
             val item = inflate.inflate(R.layout.win_item, null)
             item.findViewById<TextView>(R.id.win_text).setText( getString(R.string.win) + " $punteggio / $tot")
+            if(punteggio < tot.toInt() / 2 || punteggio == 0){
+                item.findViewById<ImageView>(R.id.good).visibility = View.GONE
+            }else{
+                item.findViewById<ImageView>(R.id.notgood).visibility = View.GONE
+            }
             val win = AlertDialog.Builder(this)
             win.setView(item)
             win.setCancelable(false)

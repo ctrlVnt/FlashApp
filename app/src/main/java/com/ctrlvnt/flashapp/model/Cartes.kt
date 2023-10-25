@@ -1,4 +1,4 @@
-package model
+package com.ctrlvnt.flashapp.model
 
 class Cartes(
     val id: Int,

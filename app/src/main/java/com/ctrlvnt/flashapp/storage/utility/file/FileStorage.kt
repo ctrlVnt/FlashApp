@@ -1,7 +1,7 @@
-package storage.utility.file
+package com.ctrlvnt.flashapp.storage.utility.file
 
 import android.content.Context
-import storage.utility.Storage
+import com.ctrlvnt.flashapp.storage.utility.Storage
 import java.io.BufferedReader
 import java.io.FileNotFoundException
 import java.io.InputStreamReader

@@ -1,10 +1,6 @@
-package com.ctrlvnt.flashapp
+package com.ctrlvnt.flashapp.activities
 
-import adapter.CollectionAdapter
-import android.animation.Animator
-import android.animation.AnimatorInflater
-import android.animation.AnimatorSet
-import android.annotation.SuppressLint
+import com.ctrlvnt.flashapp.adapter.CollectionAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,9 +18,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ctrlvnt.flashapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import model.Collection
-import storage.CollectionJSONFileStorage
+import com.ctrlvnt.flashapp.model.Collection
+import com.ctrlvnt.flashapp.storage.CollectionJSONFileStorage
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
@@ -32,8 +29,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var addsBtn: Button
     private lateinit var recvLocale:RecyclerView
-    private lateinit var localList:ArrayList<model.Collection>
-    private lateinit var collectionAdapter:CollectionAdapter
+    private lateinit var localList:ArrayList<Collection>
+    private lateinit var collectionAdapter: CollectionAdapter
 
     private lateinit var storageLocal: CollectionJSONFileStorage
 
@@ -114,7 +111,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     dialog.dismiss()
                 }
-                supDialog.setNegativeButton(getString(R.string.not)){dialog,_->
+                supDialog.setNegativeButton(getString(R.string.not)){ dialog, _->
                     dialog.dismiss()
                 }
                 supDialog.create()
@@ -141,7 +138,7 @@ class MainActivity : AppCompatActivity() {
             if(names != "" && dontExist(names)) {
                 if(tag == "")
                     tag = "..."
-                localList.add(model.Collection(int, names, tag, 0))
+                localList.add(Collection(int, names, tag, 0))
                 storageLocal.insert(
                     Collection(
                         int,
@@ -182,11 +179,11 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    private fun loadJson(storage: CollectionJSONFileStorage, arraylist:ArrayList<model.Collection>, fine:Int) {
+    private fun loadJson(storage: CollectionJSONFileStorage, arraylist:ArrayList<Collection>, fine:Int) {
 
         for (i in fine until storage.size() + 1) {
             arraylist.add(
-                model.Collection(
+                Collection(
                     storage.find(i)!!.id,
                     storage.find(i)!!.name,
                     storage.find(i)!!.tag,

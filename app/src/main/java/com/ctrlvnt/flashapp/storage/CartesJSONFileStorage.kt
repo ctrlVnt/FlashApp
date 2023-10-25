@@ -1,9 +1,9 @@
-package storage
+package com.ctrlvnt.flashapp.storage
 
 import android.content.Context
-import model.Cartes
+import com.ctrlvnt.flashapp.model.Cartes
 import org.json.JSONObject
-import storage.utility.file.JSONFileStorage
+import com.ctrlvnt.flashapp.storage.utility.file.JSONFileStorage
 
 class CartesJSONFileStorage (context: Context, collection:String): JSONFileStorage<Cartes>(context,collection) {
     override fun create(id: Int, obj: Cartes): Cartes {

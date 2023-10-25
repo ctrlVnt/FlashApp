@@ -1,12 +1,12 @@
-package storage
+package com.ctrlvnt.flashapp.storage
 
 import android.content.Context
 import android.content.SharedPreferences
-import model.Cartes
-import storage.utility.Storage
+import com.ctrlvnt.flashapp.model.Cartes
+import com.ctrlvnt.flashapp.storage.utility.Storage
 
 object CartesStorage {
-    private const val STORAGE = "storage"
+    private const val STORAGE = "com/ctrlvnt/flashapp/storage"
     const val FILE_JSON = 1
     private const val DEFAULT = 1
 
