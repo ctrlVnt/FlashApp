@@ -50,6 +50,6 @@ Here are some demo screenshots showcasing the main features of Flashapp:
 
 Get Real YT Music on [Google Play Store](https://play.google.com/store/apps/details?id=com.ctrlvnt.flashapp).
 
-[![Download Real YT Music on Google Play](https://play.google.com/store/apps/details?id=com.ctrlvnt.flashapp)
+[![Download Real YT Music on Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=com.ctrlvnt.flashapp)
 
 ---
