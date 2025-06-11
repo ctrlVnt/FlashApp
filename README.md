@@ -1,6 +1,6 @@
 # FlashApp
 
-<img src = "https://riccardoventurini.dev/assets/portfolio/flashapp.png" width ="500" />
+<img src = "https://riccardoventurini.dev/images/flashapp.png" width ="500" />
 
 FlashApp is an android application to help improve memory and learning thanks to the use of virtual flashcards
 
