@@ -54,3 +54,8 @@ Get Real YT Music on [Google Play Store](https://play.google.com/store/apps/deta
 [![Download Real YT Music on Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=com.ctrlvnt.flashapp)
 
 ---
+## Support me
+If you want to support me, thank you!
+
+[<img width="545" alt="bmc-button" src="https://github.com/user-attachments/assets/002f8e0b-c0a7-45bf-b73d-92d36dff8090" />](https://www.buymeacoffee.com/v3ntuz)
+
